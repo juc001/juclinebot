@@ -12,7 +12,7 @@ from linebot.models import *
 #======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
-from Function import *
+from Functions import *
 from connect import ConnectPostgreSQL
 #======這裡是呼叫的檔案內容=====
 
@@ -52,7 +52,7 @@ def handle_message(event):
     if '最新合作廠商' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '紀錄' in msg:
+    elif '學生紀錄紀錄' in msg:
         message = insert_record(event)
         line_bot_api.reply_message(event.reply_token, message)
     elif '查詢' in msg:
