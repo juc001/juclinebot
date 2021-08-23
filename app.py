@@ -52,7 +52,7 @@ def handle_message(event):
     if '最新合作廠商' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '學生紀錄紀錄' in msg:
+    elif '學生紀錄' in msg:
         message = insert_record(event)
         line_bot_api.reply_message(event.reply_token, message)
     elif '查詢' in msg:
