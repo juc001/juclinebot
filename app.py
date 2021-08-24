@@ -48,13 +48,12 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if '最新合作廠商' in msg:
-        message = '去你嗎的學生紀錄'
-        #msgtext.imagemap_message()
+        message = msgtext.imagemap_message()
     elif '學生紀錄' in msg:
-        message = '去你嗎的學生紀錄'
+        message = "去你嗎的學生紀錄"
         #postdb.insert_record(event)
     elif '查詢' in msg:
-        message = '去你嗎的查詢'
+        message = "去你嗎的查詢"
         #searchdb.line_select_overall()
     elif '活動消息' in msg:
         message = msgtext.buttons_message()
@@ -65,7 +64,7 @@ def handle_message(event):
     elif '圖片畫廊' in msg:
         message = msgtext.image_carousel_message1()
     elif '功能' in msg:
-        message = '去你嗎的功能列表'
+        message = "去你嗎的功能列表"
         #msgtext.func_list()
     else:
         message = TextSendMessage(text=msg)
