@@ -2,6 +2,7 @@ import psycopg2
 import os
 
 def line_select_overall():
+    TextSendMessage(text='去你的查詢')
     DATABASE_URL = 'postgres://npiqezewrkddpe:0a97822788672e9ee3a0521b75427bf4d0b92f20e5fda20b44ebe3bf1128bc9d@ec2-18-214-238-28.compute-1.amazonaws.com:5432/d4u1bgq5fsb3a'
 
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
