@@ -49,32 +49,23 @@ def handle_message(event):
     msg = event.message.text
     if '最新合作廠商' in msg:
         message = msgtext.imagemap_message()
-        line_bot_api.reply_message(event.reply_token, message)
     elif '學生紀錄' in msg:
         message = postdb.insert_record(event)
-        line_bot_api.reply_message(event.reply_token, message)
     elif '查詢' in msg:
         message = searchdb.line_select_overall(event)
-        line_bot_api.reply_message(event.reply_token, message)
     elif '活動消息' in msg:
         message = msgtext.buttons_message()
-        line_bot_api.reply_message(event.reply_token, message)
     elif '註冊會員' in msg:
         message = msgtext.Confirm_Template()
-        line_bot_api.reply_message(event.reply_token, message)
     elif '旋轉木馬' in msg:
         message = msgtext.Carousel_Template()
-        line_bot_api.reply_message(event.reply_token, message)
     elif '圖片畫廊' in msg:
         message = msgtext.image_carousel_message1()
-        line_bot_api.reply_message(event.reply_token, message)
     elif '功能列表' in msg:
         message = juclist.function_list()
-        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
-        line_bot_api.reply_message(event.reply_token, message)
-
+    line_bot_api.reply_message(event.reply_token, message)
 @handler.add(PostbackEvent)
 def handle_message(event):
     print(event.postback.data)
@@ -92,5 +83,4 @@ def welcome(event):
         
 import os
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run()
