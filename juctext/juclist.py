@@ -74,5 +74,5 @@ def function_list():
     ],
     "flex": 0
   }
-}
+  }
   return message
