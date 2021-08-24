@@ -48,7 +48,8 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if '最新合作廠商' in msg:
-        message = msgtext.imagemap_message()
+        message = '去你嗎的學生紀錄'
+        #msgtext.imagemap_message()
     elif '學生紀錄' in msg:
         message = '去你嗎的學生紀錄'
         #postdb.insert_record(event)
