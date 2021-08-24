@@ -7,13 +7,11 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
+from juctext import juclist,msgtext,searchdb,postdb
 
 
 #======這裡是呼叫的檔案內容=====
-from message import *
-from new import *
-from Functions import *
-from connect import ConnectPostgreSQL
+
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -50,28 +48,28 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if '最新合作廠商' in msg:
-        message = imagemap_message()
+        message = msgtext.imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
     elif '學生紀錄' in msg:
-        message = insert_record(event)
+        message = postdb.insert_record(event)
         line_bot_api.reply_message(event.reply_token, message)
     elif '查詢' in msg:
-        message = ConnectPostgreSQL.line_select_overall(event)
+        message = searchdb.line_select_overall(event)
         line_bot_api.reply_message(event.reply_token, message)
     elif '活動消息' in msg:
-        message = buttons_message()
+        message = msgtext.buttons_message()
         line_bot_api.reply_message(event.reply_token, message)
     elif '註冊會員' in msg:
-        message = Confirm_Template()
+        message = msgtext.Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '旋轉木馬' in msg:
-        message = Carousel_Template()
+        message = msgtext.Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '圖片畫廊' in msg:
-        message = test()
+        message = msgtext.image_carousel_message1()
         line_bot_api.reply_message(event.reply_token, message)
     elif '功能列表' in msg:
-        message = function_list()
+        message = juclist.function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
