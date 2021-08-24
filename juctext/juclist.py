@@ -1,8 +1,6 @@
 #這個檔案的作用是：建立功能列表
 
 #===============這些是LINE提供的功能套組，先用import叫出來=============
-from linebot import LineBotApi, WebhookHandler
-from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 #===============LINEAPI=============================================
 
@@ -12,7 +10,7 @@ from linebot.models import *
 #function_list的括號內是設定此函數呼叫時需要給函數的參數有哪些
 
 def function_list():
-    message = {
+  message = {
   "type": "bubble",
   "footer": {
     "type": "box",
@@ -77,4 +75,4 @@ def function_list():
     "flex": 0
   }
 }
-    return message
+  return message
