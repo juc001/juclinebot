@@ -2,6 +2,7 @@
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
+import json
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
@@ -209,7 +210,8 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    flexmessage = {"type": "bubble",
+    TextSendMessage(text='去你的功能列表')
+    flexmessage = json.loads({"type": "bubble",
         "footer": {
         "type": "box",
         "layout": "vertical",
@@ -272,5 +274,5 @@ def func_list():
     ],
     "flex": 0
   }
-  }
+  })
     return flexmessage
