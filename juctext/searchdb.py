@@ -14,7 +14,7 @@ def line_select_overall(fetchnumber):
     message = []
     
     for i in raw:
-        message.append((i[0], i[1], i[2], str(i[3])[:-3], str(i[4])))
+        message.append((i[0], i[1], i[2], i[3]))
     
     cursor.close()
     conn.close()
