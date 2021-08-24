@@ -210,8 +210,9 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    TextSendMessage(text='去你的功能列表')
-    flexmessage = json.loads({"type": "bubble",
+    message ='去你嗎功能列表'
+    flexmessage = json.loads(
+        {"type": "bubble",
         "footer": {
         "type": "box",
         "layout": "vertical",
@@ -275,4 +276,4 @@ def func_list():
     "flex": 0
   }
   })
-    return flexmessage
+    return message
