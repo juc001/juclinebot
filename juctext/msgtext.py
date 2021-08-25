@@ -210,5 +210,5 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    message =remessage =TextSendMessage(text='我是功能喔')
+    remessage =TextSendMessage(text='我是功能喔')
     return remessage
