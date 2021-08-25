@@ -15,9 +15,9 @@ from juctext import msgtext,searchdb,postdb
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
-import tempfile, os
-import datetime
-import time
+import os
+
+
 #======python的函數庫==========
 
 app = Flask(__name__)
@@ -50,11 +50,9 @@ def handle_message(event):
     if '最新合作廠商' in msg:
         message = msgtext.imagemap_message()
     elif '學生紀錄' in msg:
-        message = "去你嗎的學生紀錄"
-        #postdb.insert_record(event)
+        message =postdb.insert_record(event)
     elif '查詢' in msg:
-        message = "去你嗎的查詢"
-        #searchdb.line_select_overall()
+        message = searchdb.line_select_overall()
     elif '活動消息' in msg:
         message = msgtext.buttons_message()
     elif '註冊會員' in msg:
@@ -64,8 +62,7 @@ def handle_message(event):
     elif '圖片畫廊' in msg:
         message = msgtext.image_carousel_message1()
     elif '功能' in msg:
-        message = "去你嗎的功能列表"
-        #msgtext.func_list()
+        message = msgtext.func_list()
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
