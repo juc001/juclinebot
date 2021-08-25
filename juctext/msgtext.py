@@ -210,5 +210,70 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    remessage =TextSendMessage(text='我是功能喔')
+    remessage = FlexSendMessage(
+    alt_text='功能',
+    contents={
+  "type": "bubble",
+  "hero": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+     {
+  "type": "bubble",
+  "hero": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          MessageTemplateAction(
+                            label='最新合作廠商',
+                            text='最新合作廠商'
+                        )
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          MessageTemplateAction(
+                            label='活動消息',
+                            text='活動消息'
+                        )
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          MessageTemplateAction(
+                            label='註冊會員',
+                            text='註冊會員'
+                        )
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          MessageTemplateAction(
+                            label='旋轉木馬',
+                            text='旋轉木馬'
+                        )
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          MessageTemplateAction(
+                            label='圖片畫廊',
+                            text='圖片畫廊'
+                        )
+        }
+      }
+    ]
+  }
+}
+    ]
+  }
+}
+)
     return remessage
