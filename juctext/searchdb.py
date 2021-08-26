@@ -8,7 +8,7 @@ def line_select_overall():
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM student;')
-    s=[][4]
+    s={[][4]}
     message=[]
     for i in range(2):
         message.append((s[i][0], s[i][1], [i][2], [i][3]))
