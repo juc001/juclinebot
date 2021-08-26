@@ -4,22 +4,23 @@ from linebot.models import *
 #紀錄主程式
 line_bot_api = '1oBwTrLvaEqSse8SULJUFmSzGSrV2NWxr71/pgCjKqUs+jaNZ2iktP+8sU0ZxSNNr/CZrgT8GUcetwRo+PeUaG0L90LBTgrr43UesgCI6IjmyuusaVtbuhrmsoA8G/nndtQ49fw28V4opCDuL/Df4QdB04t89/1O/w1cDnyilFU='
 def insert_record(event):
-    print('if失敗了')
     remessages=TextSendMessage(text='if失敗了')
     if '學生紀錄' in event.message.text:
         print('try失敗了')
         try:
+            print('try in了')
             record_list = prepare_record(event.message.text)
             reply = line_insert_record(record_list)
             event.reply_token,
             remessages=TextSendMessage(text=reply)
         except:
-                event.reply_token,
-                print('匯入失敗了')
-                remessages=TextSendMessage(text='匯入失敗了')
+            event.reply_token,
+            print('匯入失敗了')
+            remessages=TextSendMessage(text='匯入失敗了')
     return remessages
 #準備資料
 def prepare_record(text):
+    print('prepare_record')
     text_list = text.split('\n')
     record_list=set()
     for i in text_list[1:]:
@@ -33,6 +34,7 @@ def prepare_record(text):
     return record_list
 #紀錄過程
 def line_insert_record(record_list):
+    print('line_insert_record')
     DATABASE_URL = os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
