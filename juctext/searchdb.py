@@ -8,11 +8,13 @@ def line_select_overall():
     print(DATABASE_URL)
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
-    print(cursor.execute('SELECT * FROM STUDENT;'))
+    cursor.execute('SELECT * FROM STUDENT;')
     message=[]
     for i in range(2):
-        message.append(([i][0], [i][1], [i][2], [i][3]))
+        temp = cursor.fetchone()
+        message.append(temp)
         print('這是第'+i+'行')
+    print('總共:'+message)
     cursor.close()
     conn.close()
     return message
