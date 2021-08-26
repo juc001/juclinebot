@@ -19,10 +19,14 @@ def insert_record(event):
 def prepare_record(text):
     print('prepare_record')
     text_list = text.split('\n')
+    print(text_list)
     record_list=[]
     print('FOR上')
-    for i in text_list[1:]:
+    for i in text_list:
+        if(i)==0:
+            i=i+1
         temp_list = i.split(';')
+        print(text_list)
         temp_id = temp_list[0]
         temp_name = temp_list[1]
         temp_gender = temp_list[2]
