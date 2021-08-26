@@ -27,14 +27,18 @@ def prepare_record(text):
         print(temp_list)
         temp_id = temp_list[0]
         print(temp_id)
+        record_list.append(temp_id)
         temp_name = temp_list[1]
         print(temp_name)
+        record_list.append(temp_name)
         temp_gender = temp_list[2]
         print(temp_gender)
+        record_list.append(temp_gender)
         temp_grade = temp_list[3]
         print(temp_grade)
+        record_list.append(temp_grade)
         print('record下:'+i)
-        record_list.append(temp_id,temp_name,temp_gender,temp_grade)
+        
         print('加入:'+record_list)
     return record_list
 #紀錄過程
