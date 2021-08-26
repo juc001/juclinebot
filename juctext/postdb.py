@@ -33,11 +33,9 @@ def prepare_record(text):
         print(temp_gender)
         temp_grade = temp_list[3]
         print(temp_grade)
-        print('record上:'+i)
-        record = (temp_id,temp_name,temp_gender,temp_grade)
         print('record下:'+i)
-        record_list.append[record]
-        print('加入:'+record)
+        record_list.append[temp_id,temp_name,temp_gender,temp_grade]
+        print('加入:'+record_list)
     return record_list
 #紀錄過程
 def line_insert_record(record_list):
