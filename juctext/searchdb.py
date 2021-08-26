@@ -11,7 +11,7 @@ def line_select_overall():
     s=set()
     message=[]
     for i in range(2):
-        message.append((s[i][0], s[i][1], [i][2], [i][3]))
+        message.append(([i][0], [i][1], [i][2], [i][3]))
         print('這是第'+i+'行')
     cursor.close()
     conn.close()
