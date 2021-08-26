@@ -10,7 +10,7 @@ def line_select_overall():
     cursor.execute('SELECT * FROM student;')
     message=[]
     for i in range(2):
-        message.append(i[0], i[1], i[2], i[3])
+        message.append((str(i[0]), str(i[1]), str(i[2]), str(i[3])))
         print('這是第'+i+'行')
     cursor.close()
     conn.close()

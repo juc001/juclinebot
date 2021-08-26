@@ -26,7 +26,7 @@ def prepare_record(text):
         if(i)==0:
             i=i+1
         temp_list = i.split(' ')
-        print(text_list)
+        print(temp_list)
         temp_id = temp_list[0]
         print(temp_id)
         temp_name = temp_list[1]
