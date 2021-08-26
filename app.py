@@ -50,8 +50,10 @@ def handle_message(event):
     if '最新合作廠商' in msg:
         message = msgtext.imagemap_message()
     elif '學生紀錄' in msg:
+        message=TextSendMessage(text='進入匯入失敗了')
         message =postdb.insert_record(event)
     elif '查詢' in msg:
+        message=TextSendMessage(text='進入查詢失敗了')
         message = searchdb.line_select_overall()
     elif '活動消息' in msg:
         message = msgtext.buttons_message()
