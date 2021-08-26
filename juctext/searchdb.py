@@ -3,14 +3,15 @@ import os
 from linebot.models import *
 
 def line_select_overall():
-    message=TextSendMessage(text='查詢失敗了')
-    DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a juctest').read()[:-1]
+    print('查詢失敗了')
+    DATABASE_URL =os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM student;')
-    message = []
+    message=set()
     for i in 2:
         message.append(i[0], i[1], i[2], i[3])
+        print('這是第'+i+'行')
     cursor.close()
     conn.close()
     return message

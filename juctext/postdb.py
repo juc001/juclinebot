@@ -4,28 +4,24 @@ from linebot.models import *
 #紀錄主程式
 line_bot_api = '1oBwTrLvaEqSse8SULJUFmSzGSrV2NWxr71/pgCjKqUs+jaNZ2iktP+8sU0ZxSNNr/CZrgT8GUcetwRo+PeUaG0L90LBTgrr43UesgCI6IjmyuusaVtbuhrmsoA8G/nndtQ49fw28V4opCDuL/Df4QdB04t89/1O/w1cDnyilFU='
 def insert_record(event):
+    print('if失敗了')
     remessages=TextSendMessage(text='if失敗了')
     if '學生紀錄' in event.message.text:
-        remessages=TextSendMessage(text='try失敗了')
+        print('try失敗了')
         try:
             record_list = prepare_record(event.message.text)
             reply = line_insert_record(record_list)
-
-            line_bot_api.reply_message(
-                event.reply_token,
-                remessages=TextSendMessage(text=reply)
-            )
-
+            event.reply_token,
+            remessages=TextSendMessage(text=reply)
         except:
-            line_bot_api.reply_message(
                 event.reply_token,
+                print('匯入失敗了')
                 remessages=TextSendMessage(text='匯入失敗了')
-            )
     return remessages
 #準備資料
 def prepare_record(text):
     text_list = text.split('\n')
-    record_list = []
+    record_list=set()
     for i in text_list[1:]:
         temp_list = i.split(';')
         temp_id = temp_list[0]
@@ -37,8 +33,7 @@ def prepare_record(text):
     return record_list
 #紀錄過程
 def line_insert_record(record_list):
-    DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a juctest').read()[:-1]
-
+    DATABASE_URL = os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
     cursor.executemany('INSERT INTO sudent(id, name, gender, grade) VALUES (%s,%s,%s,%s)', record_list)
