@@ -1,7 +1,9 @@
 import psycopg2
 import os
+from linebot.models import *
 
 def line_select_overall():
+    message=TextSendMessage(text='查詢失敗了')
     DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a juctest').read()[:-1]
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()

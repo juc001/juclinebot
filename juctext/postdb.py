@@ -4,6 +4,7 @@ from linebot.models import *
 #紀錄主程式
 line_bot_api = '1oBwTrLvaEqSse8SULJUFmSzGSrV2NWxr71/pgCjKqUs+jaNZ2iktP+8sU0ZxSNNr/CZrgT8GUcetwRo+PeUaG0L90LBTgrr43UesgCI6IjmyuusaVtbuhrmsoA8G/nndtQ49fw28V4opCDuL/Df4QdB04t89/1O/w1cDnyilFU='
 def insert_record(event):
+    remessages=TextSendMessage(text='if失敗了')
     if '學生紀錄' in event.message.text:
         remessages=TextSendMessage(text='try失敗了')
         try:
