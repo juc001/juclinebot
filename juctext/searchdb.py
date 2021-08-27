@@ -10,6 +10,7 @@ def line_select_overall():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM STUDENT;')
     message=[]
+    row = cursor.fetchone()
     while row is not None:
         print(row)
         row = cursor.fetchone()

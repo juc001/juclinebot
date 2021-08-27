@@ -22,7 +22,7 @@ def prepare_record(text):
     print(text_list)
     record_list=[]
     print('FOR上')
-    for i in int(text_list[1:]):
+    for i in text_list[2:]:
         temp_list = i.split(' ')
         print(temp_list)
         temp_id = temp_list[0]
