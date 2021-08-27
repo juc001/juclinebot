@@ -15,7 +15,7 @@ def line_select_overall():
         print(row)
         row = cursor.fetchone()
         message.append(row)
-    print('總共:'+message)
+    print(message)
     cursor.close()
     conn.close()
     return message
