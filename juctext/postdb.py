@@ -48,7 +48,9 @@ def line_insert_record(record_list):
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     print('DATABASE_URL連線2')
     cursor = conn.cursor()
-    cursor.executemany('INSERT INTO sudent(id, name, gender, grade) VALUES (%s,%s,%s,%s)', record_list)
+    print('DATABASE_URL連線3')
+    jucinsert="INSERT INTO STUDENT(id, name, gender, grade) VALUES (%s,%s,%s,%s)"
+    cursor.executemany(jucinsert, record_list)
     print('資料輸入')
     conn.commit()
     print('資料允許')
