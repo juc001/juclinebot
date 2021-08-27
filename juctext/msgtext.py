@@ -210,5 +210,5 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊')
+    remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量')
     return remessage
