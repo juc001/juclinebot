@@ -41,7 +41,7 @@ def prepare_record(text):
 #紀錄過程
 def line_insert_record(record_list):
     print('line_insert_record')
-    DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a juctest').read()[:-1]
+    DATABASE_URL =os.environ['DATABASE_URL']
     print('DATABASE_URL連線1')
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     print('DATABASE_URL連線2')
