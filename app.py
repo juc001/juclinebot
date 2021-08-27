@@ -54,7 +54,7 @@ def handle_message(event):
     elif '學生紀錄' in msg:
         message =postdb.insert_record(event)
     elif '查詢' in msg:
-        message =TextSendMessage(text=searchdb.line_select_overall(event))
+        message = searchdb.line_select_overall(event)
     elif '活動消息' in msg:
         message = msgtext.buttons_message()
     elif '註冊會員' in msg:
