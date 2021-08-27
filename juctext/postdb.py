@@ -27,23 +27,21 @@ def prepare_record(text):
         print(temp_list)
         temp_id = temp_list[0]
         print(temp_id)
-        record_list.append(temp_id)
         temp_name = temp_list[1]
         print(temp_name)
-        record_list.append(temp_name)
         temp_gender = temp_list[2]
         print(temp_gender)
-        record_list.append(temp_gender)
         temp_grade = temp_list[3]
         print(temp_grade)
-        record_list.append(temp_grade)
+        prerecord=(temp_id,temp_name,temp_gender,temp_grade)
+        record_list.append(prerecord)
         print('record下:'+i)        
         print(record_list)
     return record_list
 #紀錄過程
 def line_insert_record(record_list):
     print('line_insert_record')
-    DATABASE_URL = os.environ['DATABASE_URL']
+    DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a juctest').read()[:-1]
     print('DATABASE_URL連線1')
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     print('DATABASE_URL連線2')
@@ -54,9 +52,10 @@ def line_insert_record(record_list):
     print('資料輸入')
     conn.commit()
     print('資料允許')
-    message =("恭喜您！"+ {cursor.rowcount}+" 筆資料成功匯入 sudent 表單！")
+    num=cursor.rowcount
+    message =("恭喜您！"+str(num)+" 筆資料成功匯入 sudent 表單！")
     print(message)
-    cursor.close()
+    cursor.close()  
     conn.close()
     return message
 
