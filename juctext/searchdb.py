@@ -10,10 +10,10 @@ def line_select_overall():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM STUDENT;')
     message=[]
-    for i in range(2):
-        temp = cursor.fetchone()
-        message.append(temp)
-        print('這是第'+i+'行')
+    while row is not None:
+        print(row)
+        row = cursor.fetchone()
+        message.append(row)
     print('總共:'+message)
     cursor.close()
     conn.close()
