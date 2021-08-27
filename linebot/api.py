@@ -99,7 +99,7 @@ class LineBotApi(object):
         :type timeout: float | tuple(float, float)
         """
         if not isinstance(messages, (list, tuple)):
-            messages = messages
+            messages = [messages]
 
         data = {
             'replyToken': reply_token,
