@@ -15,3 +15,4 @@ for i in raw:
 cursor.close()
 conn.close()
 print(message)
+print(type(message))
