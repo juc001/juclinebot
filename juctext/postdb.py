@@ -22,7 +22,7 @@ def prepare_record(text):
     print(text_list)
     record_list=[]
     print('FOR上')
-    for i in text_list[2:]:
+    for i in text_list[1:]:
         temp_list = i.split(' ')
         print(temp_list)
         temp_id = temp_list[0]
@@ -38,7 +38,7 @@ def prepare_record(text):
         print(temp_grade)
         record_list.append(temp_grade)
         print('record下:'+i)        
-        print('加入:'+record_list)
+        print(record_list)
     return record_list
 #紀錄過程
 def line_insert_record(record_list):
