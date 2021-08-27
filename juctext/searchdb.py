@@ -16,4 +16,5 @@ def line_select_overall(event):
         message.append((str(i[0]), str(i[1]), str(i[2]),str(i[3])))
     cursor.close()
     conn.close()
-    return message
+    msg=set(message)
+    return msg
