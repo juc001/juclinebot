@@ -11,7 +11,7 @@ cursor.execute(postgres_select_query)
 raw = cursor.fetchmany(int(num[1]))
 message = []
 for i in raw:
-    message.append((str(i[0]), str(i[1]), str(i[2]),str(i[3])))
+    message.append([str(i[0]), str(i[1]), str(i[2]),str(i[3])])
 cursor.close()
 conn.close()
 print(message)
