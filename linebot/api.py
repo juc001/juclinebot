@@ -103,7 +103,7 @@ class LineBotApi(object):
 
         data = {
             'replyToken': reply_token,
-            'messages': [message.as_json_dict() for message in messages],
+            'messages': [message for message in messages],
             'notificationDisabled': notification_disabled,
         }
 
