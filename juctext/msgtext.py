@@ -225,7 +225,7 @@ def emoji_text():
         "emojiId": "002"
     }
     ]
-    text_message = TextSendMessage(text='$ LINE emoji $', emojis=emoji)
+    text_message = TextSendMessage(text='$ LINE emoji  $', emojis=emoji)
     return text_message
 def Image_Send():
     image_message = ImageSendMessage(
