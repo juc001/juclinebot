@@ -235,13 +235,13 @@ def Image_Send():
     return image_message
 def Video_Send():
     video_message = VideoSendMessage(
-    original_content_url='https://www.youtube.com/watch?v=Oi9BmMFeJZU',
+    original_content_url='https://youtu.be/DeaaGn8f39A',
     preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg'
     )
     return video_message
 def Audio_Send():
     audio_message = AudioSendMessage(
-    original_content_url='https://www.youtube.com/watch?v=wrpRv1pyV6I&list=RDIxgLZBHPxHM&index=3',
+    original_content_url='https://www.youtube.com/watch?v=DeaaGn8f39A',
     duration=240000
     )
     return audio_message
