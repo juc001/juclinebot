@@ -212,3 +212,48 @@ def image_carousel_message1():
 def func_list():
     remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量')
     return remessage
+def emoji_text():
+    emoji = [
+    {
+        "index": 0,
+        "productId": "5ac1bfd5040ab15980c9b435",
+        "emojiId": "001"
+    },
+    {
+        "index": 13,
+        "productId": "5ac1bfd5040ab15980c9b435",
+        "emojiId": "002"
+    }
+    ]
+    text_message = TextSendMessage(text='$ LINE emoji $', emojis=emoji)
+    return text_message
+def Image_Send():
+    image_message = ImageSendMessage(
+    original_content_url='https://example.com/original.jpg',
+    preview_image_url='https://example.com/preview.jpg'
+    )
+    return image_message
+def Video_Send():
+    video_message = VideoSendMessage(
+    original_content_url='https://example.com/original.mp4',
+    preview_image_url='https://example.com/preview.jpg'
+    )
+    return video_message
+def Audio_Send():
+    audio_message = AudioSendMessage(
+    original_content_url='https://example.com/original.m4a',
+    duration=240000
+    )
+    return audio_message
+def Location_Send():
+    location_message = LocationSendMessage(
+    title='my location',
+    address='Tokyo',
+    latitude=35.65910807942215,
+    longitude=139.70372892916203)
+    return location_message
+def Sticker_Send():
+    sticker_message = StickerSendMessage(
+    package_id='1',
+    sticker_id='1')
+    return sticker_message
