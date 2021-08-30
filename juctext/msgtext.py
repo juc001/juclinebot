@@ -220,7 +220,7 @@ def emoji_text():
         "emojiId": "001"
     },
     {
-        "index": 13,
+        "index": 14,
         "productId": "5ac1bfd5040ab15980c9b435",
         "emojiId": "002"
     }
@@ -229,25 +229,25 @@ def emoji_text():
     return text_message
 def Image_Send():
     image_message = ImageSendMessage(
-    original_content_url='https://example.com/original.jpg',
-    preview_image_url='https://example.com/preview.jpg'
+    original_content_url='https://th.bing.com/th/id/OIP.C-kOjyzl0RYV6Ztl6msogQHaD4?pid=ImgDet&rs=1',
+    preview_image_url='https://th.bing.com/th/id/OIP.asdpsCTwQqvUQMTjpu7xQwHaIO?pid=ImgDet&w=400&h=444&rs=1'
     )
     return image_message
 def Video_Send():
     video_message = VideoSendMessage(
-    original_content_url='https://example.com/original.mp4',
-    preview_image_url='https://example.com/preview.jpg'
+    original_content_url='https://www.youtube.com/watch?v=Oi9BmMFeJZU',
+    preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg'
     )
     return video_message
 def Audio_Send():
     audio_message = AudioSendMessage(
-    original_content_url='https://example.com/original.m4a',
+    original_content_url='https://www.youtube.com/watch?v=wrpRv1pyV6I&list=RDIxgLZBHPxHM&index=3',
     duration=240000
     )
     return audio_message
 def Location_Send():
     location_message = LocationSendMessage(
-    title='my location',
+    title='EX location',
     address='Tokyo',
     latitude=35.65910807942215,
     longitude=139.70372892916203)

@@ -65,17 +65,17 @@ def handle_message(event):
         message = msgtext.image_carousel_message1()
     elif '功能' in msg:
         message = msgtext.func_list()
-    elif'表情'in msg:
+    elif '表情' in msg:
         message =msgtext.emoji_text()
-    elif'圖片'in msg:
+    elif '圖片' in msg:
         message =msgtext.Image_Send()
-    elif'影片'in msg:
+    elif '影片' in msg:
         message =msgtext.Video_Send()
-    elif'音檔'in msg:
+    elif '音檔' in msg:
         message =msgtext.Audio_Send()
-    elif'地址'in msg:
+    elif '地址' in msg:
         message =msgtext.Location_Send()
-    elif'貼圖'in msg:
+    elif '貼圖' in msg:
         message =msgtext.Sticker_Send()
     else:
         message = TextSendMessage(text=msg)
