@@ -49,7 +49,6 @@ def imagemap_message():
         ]
     )
     return message
-
 #TemplateSendMessage - ButtonsTemplate (按鈕介面訊息)
 def buttons_message():
     message = TemplateSendMessage(
@@ -79,7 +78,6 @@ def buttons_message():
         )
     )
     return message
-
 #TemplateSendMessage - ConfirmTemplate(確認介面訊息)
 def Confirm_Template():
 
@@ -101,7 +99,6 @@ def Confirm_Template():
         )
     )
     return message
-
 #旋轉木馬按鈕訊息介面
 def Carousel_Template():
     message = TemplateSendMessage(
@@ -169,7 +166,6 @@ def Carousel_Template():
         )
     )
     return message
-
 #TemplateSendMessage - ImageCarouselTemplate(圖片旋轉木馬)
 def image_carousel_message1():
     message = TemplateSendMessage(
@@ -210,8 +206,9 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量')
+    remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量\n表情\n圖片\n影片\n音檔\n地址\n貼圖')
     return remessage
+#emoji實驗
 def emoji_text():
     emoji = [
     {
@@ -227,31 +224,36 @@ def emoji_text():
     ]
     text_message = TextSendMessage(text='$ LINE emoji  $', emojis=emoji)
     return text_message
+#圖片實驗
 def Image_Send():
     image_message = ImageSendMessage(
     original_content_url='https://th.bing.com/th/id/OIP.C-kOjyzl0RYV6Ztl6msogQHaD4?pid=ImgDet&rs=1',
     preview_image_url='https://th.bing.com/th/id/OIP.asdpsCTwQqvUQMTjpu7xQwHaIO?pid=ImgDet&w=400&h=444&rs=1'
     )
     return image_message
+#影片實驗
 def Video_Send():
     video_message = VideoSendMessage(
-    original_content_url='https://youtu.be/DeaaGn8f39A',
+    original_content_url='https://dl269.dlmate17.xyz/?file=M3R4SUNiN3JsOHJ6WVo3MXN2Mlg5WVM5RkYrNHVyaHAwK1l5eGhRc0ZyZ0hqb0k2eE9IckJzZExKNmtJaHF5M0hkSWYyei9SZjlHQ2V6Mk11YlluQ1ZhdjBKME9yRDJCL3A1MEg4OTRXaFBIaStlM25td3oyeUhzY2MzWkFMcFRLQ1ZkcmxBM2xuUzFuTFNHbnd5cXZueTVvZ09BWXlsQi8zQVlOZlRVL29oYjZtSEVldVRoN0pVTHFTK1I1YVZQei95Uml3LzN5cncvc2VOblcwdDZjcTlZMTUzS3pPWE9tbTRCaDdVbStHV1VzY3FMT2M5bFJQV09YeDlDY0M4WnZhbnFSQXNYM1NBSzhXRzdxLzV6dlRGZEpQVXN2enJ5NnVTMGRTbktLZz09',
     preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg'
     )
     return video_message
+#音檔實驗
 def Audio_Send():
     audio_message = AudioSendMessage(
-    original_content_url='https://www.youtube.com/watch?v=DeaaGn8f39A',
+    original_content_url='https://freepd.com/music/Beat%20Thee.mp3',
     duration=240000
     )
     return audio_message
+#地址實驗
 def Location_Send():
     location_message = LocationSendMessage(
-    title='EX location',
-    address='Tokyo',
+    title='猜猜這是哪',
+    address='地址喔',
     latitude=35.65910807942215,
     longitude=139.70372892916203)
     return location_message
+#貼圖實驗
 def Sticker_Send():
     sticker_message = StickerSendMessage(
     package_id='1',
