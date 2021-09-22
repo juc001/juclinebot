@@ -206,7 +206,7 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    remessage = TextSendMessage(text='最新合作廠商\n活動消息\n註冊會員\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量\n表情\n圖片\n影片\n音檔\n地址\n貼圖')
+    remessage = TextSendMessage(text='組圖\n按鈕\n確認\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量\n表情\n圖片\n影片\n音檔\n地址\n貼圖')
     return remessage
 #emoji實驗
 def emoji_text():
@@ -234,7 +234,7 @@ def Image_Send():
 #影片實驗
 def Video_Send():
     video_message = VideoSendMessage(
-    original_content_url='https://dl269.dlmate17.xyz/?file=M3R4SUNiN3JsOHJ6WVo3MXN2Mlg5WVM5RkYrNHVyaHAwK1l5eGhRc0ZyZ0hqb0k2eE9IckJzZExKNmtJaHF5M0hkSWYyei9SZjlHQ2V6Mk11YlluQ1ZhdjBKME9yRDJCL3A1MEg4OTRXaFBIaStlM25td3oyeUhzY2MzWkFMcFRLQ1ZkcmxBM2xuUzFuTFNHbnd5cXZueTVvZ09BWXlsQi8zQVlOZlRVL29oYjZtSEVldVRoN0pVTHFTK1I1YVZQei95Uml3LzN5cncvc2VOblcwdDZjcTlZMTUzS3pPWE9tbTRCaDdVbStHV1VzY3FMT2M5bFJQV09YeDlDY0M4WnZhbnFSQXNYM1NBSzhXRzdxLzV6dlRGZEpQVXN2enJ5NnVTMGRTbktLZz09',
+    original_content_url='https://dl259.dlmate16.xyz/?file=M3R4SUNiN3JsOHJ6WVo3MXN2Mlg5WVM5RkYrNHVyaHAwK1l5eGhRc0ZyZ0hqb0k2eE9IckJzZExKNmtJaHF5M0hkSWYyei9SZjlHQ2V6Mk11YlluQ1ZhdjBKME9yRDN3NWR4MENmay9Xd2FzM2VDcW1qUkptUWJoZG9XSVI1NVBZbUp2dGtKbWxuUzF3ZUdBL0VmZTRUai9nVlRSWVNVZXQzVUlNdmlidk5SYjNXalBZT0QzN0pnS3VEV2EzWjlIM3ZtVHN6N3cxcjR5aDlKMFYwcDFlcTlQM0pYNzNzL0pxMEFtazR3ZTVXUzhyczZjSkxZRkJJMnpSaUVpYW5JNXArTC9DRjBiMXpVWDZtbXEvNklnc3pGZkl2RWh2VFRub2FDdmRUYUNlNStuR3NYZGVMSHI0TmJ2ditwMzdSVT0%3D',
     preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg'
     )
     return video_message

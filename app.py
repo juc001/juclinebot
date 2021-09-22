@@ -49,15 +49,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if '最新合作廠商' in msg:
+    if '組圖' in msg:
         message = msgtext.imagemap_message()
     elif '學生紀錄' in msg:
         message =postdb.insert_record(event)
     elif '查詢' in msg:
         message = searchdb.line_select_overall(event)
-    elif '活動消息' in msg:
+    elif '按鈕' in msg:
         message = msgtext.buttons_message()
-    elif '註冊會員' in msg:
+    elif '確認' in msg:
         message = msgtext.Confirm_Template()
     elif '旋轉木馬' in msg:
         message = msgtext.Carousel_Template()
