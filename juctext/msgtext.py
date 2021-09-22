@@ -25,13 +25,13 @@ def imagemap_message():
         URIImagemapAction(
             link_uri='https://www.facebook.com/',
             area=ImagemapArea(
-                x=0, y=0, width=260, height=520
+                x= 0,y =290,width=260,height=227
                 )
             ),
         MessageImagemapAction(
             text='hello',
             area=ImagemapArea(
-                x=260, y=0, width=260, height=520
+                x=260,y=280,width=260,height=227
                 )
             )
         ]
