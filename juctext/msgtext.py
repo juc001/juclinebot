@@ -206,7 +206,7 @@ def image_carousel_message1():
     return message
 #建立功能列表
 def func_list():
-    remessage = TextSendMessage(text='組圖\n按鈕\n確認\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量\n表情\n圖片\n影片\n音檔\n地址\n貼圖')
+    remessage = TextSendMessage(text='組圖 \n按鈕\n確認\n旋轉木馬\n圖片畫廊\n學生紀錄:\nID 名字 性別 年紀\n查詢 數量\n表情\n圖片\n影片\n音檔\n地址\n貼圖')
     return remessage
 #emoji實驗
 def emoji_text():
