@@ -6,48 +6,36 @@ import json
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
-    message = ImagemapSendMessage(
-        base_url="https://i.imgur.com/BfTFVDN.jpg",
-        alt_text='最新的合作廠商有誰呢？',
-        base_size=BaseSize(height=2000, width=2000),
-        actions=[
-            URIImagemapAction(
-                #家樂福
-                link_uri="https://tw.shop.com/search/%E5%AE%B6%E6%A8%82%E7%A6%8F",
-                area=ImagemapArea(
-                    x=0, y=0, width=1000, height=1000
+    message= ImagemapSendMessage(
+    base_url='https://www.facebook.com/messenger_media/?thread_id=100003109398710&attachment_id=859616874845980&message_id=mid.%24cAABa88nP6LZ7VGiWx11IyM1obSjE',
+    alt_text='this is an imagemap',
+    base_size=BaseSize(height=1040, width=1040),
+    video=Video(
+        original_content_url='https://dl259.dlmate16.xyz/?file=M3R4SUNiN3JsOHJ6WVo3MXN2Mlg5WVM5RkYrNHVyaHAwK1l5eGhRc0ZyZ0hqb0k2eE9IckJzZExKNmtJaHF5M0hkSWYyei9SZjlHQ2V6Mk11YlluQ1ZhdjBKME9yRDN3NWR4MENmay9Xd2FzM2VDcW1qUkptUWJoZG9XSVI1NVBZbUp2dGtKbWxuUzF3ZUdBL0VmZTRUai9nVlRSWVNVZXQzVUlNdmlidk5SYjNXalBZT0QzN0pnS3VEV2EzWjlIM3ZtVHN6N3cxcjR5aDlKMFYwcDFlcTlQM0pYNzNzL0pxMEFtazR3ZTVXUzhyczZjSkxZRkJJMnpSaUVpYW5JNXArTC9DRjBiMXpVWDZtbXEvNklnc3pGZkl2RWh2VFRub2FDdmRUYUNlNStuR3NYZGVMSHI0TmJ2ditwMzdSVT0%3D',
+        preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg',
+        area=ImagemapArea(
+            x=0, y=0, width=1040, height=585
+        ),
+        external_link=ExternalLink(
+            link_uri='https://www.youtube.com/watch?v=eb9EqoKPV90',
+            label='See More',
+        ),
+    ),
+    actions=[
+        URIImagemapAction(
+            link_uri='https://www.facebook.com/',
+            area=ImagemapArea(
+                x=0, y=0, width=520, height=1040
                 )
             ),
-            URIImagemapAction(
-                #生活市集
-                link_uri="https://tw.shop.com/search/%E7%94%9F%E6%B4%BB%E5%B8%82%E9%9B%86",
-                area=ImagemapArea(
-                    x=1000, y=0, width=1000, height=1000
-                )
-            ),
-            URIImagemapAction(
-                #阿瘦皮鞋
-                link_uri="https://tw.shop.com/search/%E9%98%BF%E7%98%A6%E7%9A%AE%E9%9E%8B",
-                area=ImagemapArea(
-                    x=0, y=1000, width=1000, height=1000
-                )
-            ),
-            URIImagemapAction(
-                #塔吉特千層蛋糕
-                link_uri="https://tw.shop.com/search/%E5%A1%94%E5%90%89%E7%89%B9",
-                area=ImagemapArea(
-                    x=1000, y=1000, width=1000, height=500
-                )
-            ),
-            URIImagemapAction(
-                #亞尼克生乳捲
-                link_uri="https://tw.shop.com/search/%E4%BA%9E%E5%B0%BC%E5%85%8B",
-                area=ImagemapArea(
-                    x=1000, y=1500, width=1000, height=500
+        MessageImagemapAction(
+            text='hello',
+            area=ImagemapArea(
+                x=520, y=0, width=520, height=1040
                 )
             )
         ]
-    )
+    )   
     return message
 #TemplateSendMessage - ButtonsTemplate (按鈕介面訊息)
 def buttons_message():
