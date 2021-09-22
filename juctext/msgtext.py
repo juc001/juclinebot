@@ -7,14 +7,14 @@ import json
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
     message= ImagemapSendMessage(
-    base_url='https://www.facebook.com/messenger_media/?thread_id=100003109398710&attachment_id=859616874845980&message_id=mid.%24cAABa88nP6LZ7VGiWx11IyM1obSjE',
+    base_url='https://th.bing.com/th/id/OIP.d-gWntZuq3XavU5xbsiACwHaHa?pid=ImgDet&rs=1',
     alt_text='this is an imagemap',
-    base_size=BaseSize(height=1040, width=1040),
+    base_size=BaseSize(height=520, width=520),
     video=Video(
         original_content_url='https://dl259.dlmate16.xyz/?file=M3R4SUNiN3JsOHJ6WVo3MXN2Mlg5WVM5RkYrNHVyaHAwK1l5eGhRc0ZyZ0hqb0k2eE9IckJzZExKNmtJaHF5M0hkSWYyei9SZjlHQ2V6Mk11YlluQ1ZhdjBKME9yRDN3NWR4MENmay9Xd2FzM2VDcW1qUkptUWJoZG9XSVI1NVBZbUp2dGtKbWxuUzF3ZUdBL0VmZTRUai9nVlRSWVNVZXQzVUlNdmlidk5SYjNXalBZT0QzN0pnS3VEV2EzWjlIM3ZtVHN6N3cxcjR5aDlKMFYwcDFlcTlQM0pYNzNzL0pxMEFtazR3ZTVXUzhyczZjSkxZRkJJMnpSaUVpYW5JNXArTC9DRjBiMXpVWDZtbXEvNklnc3pGZkl2RWh2VFRub2FDdmRUYUNlNStuR3NYZGVMSHI0TmJ2ditwMzdSVT0%3D',
         preview_image_url='https://s3.amazonaws.com/lowres.jantoo.com/animal-kingdom-play-playing-eels-electric_eels-fish-08332490_low.jpg',
         area=ImagemapArea(
-            x=0, y=0, width=1040, height=585
+            x=0, y=0, width=520, height=290
         ),
         external_link=ExternalLink(
             link_uri='https://www.youtube.com/watch?v=eb9EqoKPV90',
@@ -25,13 +25,13 @@ def imagemap_message():
         URIImagemapAction(
             link_uri='https://www.facebook.com/',
             area=ImagemapArea(
-                x=0, y=0, width=520, height=1040
+                x=0, y=0, width=260, height=520
                 )
             ),
         MessageImagemapAction(
             text='hello',
             area=ImagemapArea(
-                x=520, y=0, width=520, height=1040
+                x=260, y=0, width=260, height=520
                 )
             )
         ]
