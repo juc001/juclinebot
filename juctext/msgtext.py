@@ -3,6 +3,7 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 import json
+import openai
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
@@ -247,3 +248,10 @@ def Sticker_Send():
     package_id='1',
     sticker_id='1')
     return sticker_message
+def GPT_response(text):
+    # 接收回應
+    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
+    print(response)
+    # 重組回應
+    answer = response['choices'][0]['text'].replace('。','')
+    return answer

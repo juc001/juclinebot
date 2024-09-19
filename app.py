@@ -23,9 +23,9 @@ import os
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
-line_bot_api = LineBotApi('1oBwTrLvaEqSse8SULJUFmSzGSrV2NWxr71/pgCjKqUs+jaNZ2iktP+8sU0ZxSNNr/CZrgT8GUcetwRo+PeUaG0L90LBTgrr43UesgCI6IjmyuusaVtbuhrmsoA8G/nndtQ49fw28V4opCDuL/Df4QdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
-handler = WebhookHandler('82838792b2f4011f2ba6dec9be85c814')
+handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -78,7 +78,7 @@ def handle_message(event):
     elif '貼圖' in msg:
         message =msgtext.Sticker_Send()
     else:
-        message = TextSendMessage(text=msg)
+        message = msgtext.GPT_response(msg)
     line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(PostbackEvent)
