@@ -5,3 +5,4 @@ future
 requests
 gunicorn
 psycopg2-binary
+openai
