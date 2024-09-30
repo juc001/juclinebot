@@ -4,7 +4,12 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 import json
 import openai
-import os
+import tempfile, os
+import datetime
+import openai
+import time
+import traceback
+
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
@@ -253,8 +258,9 @@ def Sticker_Send():
     return sticker_message
 def GPT_response(text):
     # 接收回應
+    print("傳入訊息:"+text)
     response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
-    print(response)
+    print("傳出訊息:"+response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
