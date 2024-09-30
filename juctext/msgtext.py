@@ -4,6 +4,9 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 import json
 import openai
+import os
+# OPENAI API Key初始化設定
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
