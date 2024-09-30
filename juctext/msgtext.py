@@ -259,7 +259,7 @@ def Sticker_Send():
 def GPT_response(text):
     # 接收回應
     print("傳入訊息:"+text)
-    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
+    response = openai.completions.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
     print("傳出訊息:"+response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
